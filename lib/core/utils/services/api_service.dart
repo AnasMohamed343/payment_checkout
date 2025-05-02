@@ -7,13 +7,14 @@ class ApiService {
       {required body,
       required String url,
       required String token,
+      Map<String, String>? headers,
       String? contentType}) async {
-    await Future.delayed(const Duration(seconds: 1));
+    //await Future.delayed(const Duration(seconds: 1));
     var response = await dio.post(url,
         data: body,
         options: Options(
-            contentType: contentType,
-            headers: {'Authorization': 'Bearer $token'}));
+            contentType: Headers.formUrlEncodedContentType, //contentType,
+            headers: headers ?? {'Authorization': 'Bearer $token'}));
 
     return response;
   }

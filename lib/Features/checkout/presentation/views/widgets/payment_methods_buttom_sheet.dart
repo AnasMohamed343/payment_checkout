@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_methods/Features/checkout/presentation/views/widgets/custom_button_bloc_consumer.dart';
 import 'package:payment_methods/Features/checkout/presentation/views/widgets/payment_method_listview.dart';
 import 'package:payment_methods/core/widgets/custom_button.dart';
 
@@ -42,7 +43,7 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
           // CustomButtonBlocConsumer(
           //   isPaypal: isPaypal,
           // ),
-          CustomButton(text: 'Complete Payment', onTap: () {}),
+          CustomButtonBlocConsumer(),
         ],
       ),
     );
